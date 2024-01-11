@@ -10,10 +10,12 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 
-        if (LegacyApplication.Current.Properties.ContainsKey("test"))
-        {
-            var value = (string)LegacyApplication.Current.Properties["test"];
-        }
+		if (LegacyApplication.Current.Properties.ContainsKey("test"))
+		{
+			var value = (string)LegacyApplication.Current.Properties["test"];
+		}
+		else
+			throw new Exception("Key not present");
     }
 
 	private void OnCounterClicked(object sender, EventArgs e)
